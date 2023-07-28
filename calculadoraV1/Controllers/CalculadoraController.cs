@@ -17,7 +17,7 @@ namespace calculadoraV1.Controllers
                 "-" => model.Valor1 - model.Valor2,
                 "*" => model.Valor1 * model.Valor2,
                 "/" => model.Valor1 / model.Valor2,
-                _ => (double?)0,
+                _ => (double)0,
             };
             return View(model);
         }
