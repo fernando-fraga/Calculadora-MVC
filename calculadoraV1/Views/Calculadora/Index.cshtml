@@ -1,0 +1,26 @@
+﻿@model CalculadoraModel
+
+<h2>Calculadora V1</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(c => c.Valor1)
+        @Html.TextBoxFor(c => c.Valor1)
+    </div>
+    <div>
+        @Html.LabelFor(c => c.Valor2)
+        @Html.TextBoxFor(c => c.Valor2)
+    </div>
+    <div>
+        @Html.LabelFor(c => c.Operador)
+        @Html.DropDownListFor(c => c.Operador, new SelectList(new[] {"+","-","*","/"}))
+    </div>
+    <div>
+        <input type="submit" value="Calcular">
+    </div>
+}
+
+@if (Model.Resultado != 0){
+    <h3>Resultado: @Model.Resultado</h3>
+}
